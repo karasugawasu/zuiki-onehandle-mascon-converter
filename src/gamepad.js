@@ -2,7 +2,8 @@ import { invoke } from "@tauri-apps/api/tauri";
 import {keyconfig} from "./config.js";
 
 let allowGamepad = "One Handle MasCon for Nintendo Switch"
-let haveEvents = 'ongamepadconnected' in window;
+let controller = [];
+let nIntervId;
 let pushButtonList = [];
 let pressButtonList = [];
 let knotchLevel = 0;
@@ -12,11 +13,18 @@ let Accel = 0;
 let Brake = 0;
 
 function connecthandler(e) {
-  updateStatus(e.gamepad);
+  if (!nIntervId) {
+    nIntervId = setInterval(updateStatus, 20);
+  }
 }
 
 function disconnecthandler(e) {
-  console.log("%d が切断されました", e.gamepad.id);
+  console.log(e.gamepad.id + "が切断されました");
+  controller = [];
+  if (e.gamepad.id.includes(allowGamepad)){
+    clearInterval(nIntervId);
+    nIntervId = null;
+  }
 }
 
 async function putKey(key) {
@@ -200,71 +208,73 @@ function selectKeys() {
 }
 
 
-function updateStatus(gamepad) {
+function updateStatus() {
+
+  scangamepads();
 
   pushButtonList = [];
   
-  if (gamepad.buttons[0].pressed) {
+  if (controller.buttons[0].pressed) {
     pushButtonList.push('B')
   }
-  if (gamepad.buttons[1].pressed) {
+  if (controller.buttons[1].pressed) {
     pushButtonList.push('A')
   }
-  if (gamepad.buttons[2].pressed) {
+  if (controller.buttons[2].pressed) {
     pushButtonList.push('Y')
   }
-  if (gamepad.buttons[3].pressed) {
+  if (controller.buttons[3].pressed) {
     pushButtonList.push('X')
   }
-  if (gamepad.buttons[4].pressed) {
+  if (controller.buttons[4].pressed) {
     pushButtonList.push('L')
   }
-  if (gamepad.buttons[5].pressed) {
+  if (controller.buttons[5].pressed) {
     pushButtonList.push('R')
   }
-  if (gamepad.buttons[6].pressed) {
+  if (controller.buttons[6].pressed) {
     pushButtonList.push('ZL')
   }
-  if (gamepad.buttons[7].pressed) {
+  if (controller.buttons[7].pressed) {
     pushButtonList.push('ZR')
   }
-  if (gamepad.buttons[8].pressed) {
+  if (controller.buttons[8].pressed) {
     pushButtonList.push('MINUS')
   }
-  if (gamepad.buttons[9].pressed) {
+  if (controller.buttons[9].pressed) {
     pushButtonList.push('PLUS')
   }
-  if (gamepad.buttons[12].pressed) {
+  if (controller.buttons[12].pressed) {
     pushButtonList.push('UP')
   }
-  if (gamepad.buttons[13].pressed) {
+  if (controller.buttons[13].pressed) {
     pushButtonList.push('DOWN')
   }
-  if (gamepad.buttons[14].pressed) {
+  if (controller.buttons[14].pressed) {
     pushButtonList.push('LEFT')
   }
-  if (gamepad.buttons[15].pressed) {
+  if (controller.buttons[15].pressed) {
     pushButtonList.push('RIGHT')
   }
-  if (gamepad.buttons[16].pressed) {
+  if (controller.buttons[16].pressed) {
     pushButtonList.push('HOME')
   }
-  if (gamepad.buttons[17].pressed) {
+  if (controller.buttons[17].pressed) {
     pushButtonList.push('CAPTURE')
   }
   
-  knotchLevel = gamepad.axes[1]
+  knotchLevel = controller.axes[1]
   
   selectKeys();
 }
 
 function scangamepads() {
-  var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
+  let gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
   for (var i = 0; i < gamepads.length; i++) {
     if (gamepads[i]) {
       let gamepadId = gamepads[i].id;
       if (gamepadId.includes(allowGamepad)){
-        updateStatus(gamepads[i]);
+        controller = gamepads[i];
       }
     }
   }
@@ -273,10 +283,3 @@ function scangamepads() {
 window.addEventListener("gamepadconnected", connecthandler);
 window.addEventListener("gamepaddisconnected", disconnecthandler);
 
-if (!haveEvents) {
- setInterval(scangamepads, 25);
-}
-
-// window.addEventListener('load', () => { 
-//   //loadKeyconfig();
-// })
