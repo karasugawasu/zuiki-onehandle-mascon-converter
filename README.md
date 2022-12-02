@@ -1,6 +1,6 @@
 # zuiki-onehandle-mascon-converter
 
-![main_image](https://user-images.githubusercontent.com/29486402/204465612-d91bcbe7-7f66-44e0-af77-dd36cbb815ae.jpg)
+![maingamen](https://user-images.githubusercontent.com/29486402/205307280-e828cc4a-e439-4c12-87cb-2d95702f0efa.JPG)
 
 ## できること
 - モードの変更
