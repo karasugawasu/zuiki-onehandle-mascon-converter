@@ -218,6 +218,9 @@ export let keyconfig = {
                 },
                 Left: {
                     bind: ["KNOTCH_B_DOWN" , "LEFT"]
+                },
+                Right: {
+                    bind: ["KNOTCH_B_UP" , "RIGHT"]
                 }
             },
             discription: "電車でGO! FINAL 2ハンドル",
