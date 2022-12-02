@@ -6,7 +6,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import BootstrapVue3 from 'bootstrap-vue-3'
 
 import "./style.css";
-import "./gamepad.js"
 
 import app from "./App.vue";
 
