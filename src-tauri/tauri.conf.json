@@ -7,8 +7,8 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "zuikiconverter",
-    "version": "0.0.1"
+    "productName": "zuiki-converter",
+    "version": "0.0.2"
   },
   "tauri": {
     "allowlist": {
@@ -20,7 +20,7 @@
     "bundle": {
       "active": true,
       "category": "Utility",
-      "copyright": "(C) 2022 Karasugawasu",
+      "copyright": "(C) 2022 Karasugawa Sue",
       "deb": {
         "depends": []
       },
