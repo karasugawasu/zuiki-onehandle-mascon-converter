@@ -136,11 +136,11 @@ export let keyconfig = {
                     bind: "R"
                 },
                 W: {
-                    desc: "後扉(降) あける",
+                    desc: "後扉(乗) あける",
                     bind: "PLUS"
                 },
                 Numrow2: {
-                    desc: "後扉(降) しめる",
+                    desc: "後扉(乗) しめる",
                     bind: "L"
                 },
                 Numrow1: {
