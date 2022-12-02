@@ -116,6 +116,73 @@ export let keyconfig = {
             mouse: true,
             override: true
         },
+        TRAMCITY: {
+            name: "TRAMCITY",
+            keylist: {
+                Escape: {
+                    desc: "ESCキー",
+                    bind: "HOME"
+                },
+                Enter: {
+                    desc: "警笛",
+                    bind: "A"
+                },
+                RShift: {
+                    desc: "電子警笛",
+                    bind: "B"
+                },
+                Q: {
+                    desc: "前扉(降) あける",
+                    bind: "R"
+                },
+                W: {
+                    desc: "後扉(降) あける",
+                    bind: "PLUS"
+                },
+                Numrow2: {
+                    desc: "後扉(降) しめる",
+                    bind: "L"
+                },
+                Numrow1: {
+                    desc: "前扉(降) しめる",
+                    bind: "MINUS"
+                },
+                Space: {
+                    desc: "車内放送",
+                    bind: "Y"
+                },
+                Z: {
+                    bind: "KNOTCH_P_UP"
+                },
+                A: {
+                    bind: "KNOTCH_P_DOWN"
+                },
+                ",": {
+                    bind: "KNOTCH_B_DOWN"
+                },
+                ".": {
+                    bind: "KNOTCH_B_UP"
+                },
+                Up: {
+                    bind: "UP"
+                },
+                Down: {
+                    bind: "DOWN"
+                },
+                Left: {
+                    bind: "LEFT"
+                },
+                Right: {
+                    bind: "RIGHT"
+                },
+            },
+            discription: "TRAMCITY",
+            switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
+            onehandle: false,
+            twohandle: true,
+            mouse: false,
+            override: false
+        },
         DENSHA_DE_GO_FINAL: {
             name: "電車でGO! FINAL",
             keylist: {
