@@ -111,9 +111,9 @@ export let keyconfig = {
             },
             discription: "JR East Train Simulator",
             switchbuttonlist: ["未割り当て","A","B","X","Y","UP","DOWN","LEFT","RIGHT","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
-            onehandle: false,
+            onehandle: true,
             twohandle: false,
-            mouse: true,
+            mouse: false,
             override: true
         }
         // },
