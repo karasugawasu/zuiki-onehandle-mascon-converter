@@ -115,121 +115,194 @@ export let keyconfig = {
             twohandle: false,
             mouse: true,
             override: true
-        },
-        TRAMCITY: {
-            name: "TRAMCITY",
-            keylist: {
-                Escape: {
-                    desc: "ESCキー",
-                    bind: "HOME"
-                },
-                Enter: {
-                    desc: "警笛",
-                    bind: "A"
-                },
-                RShift: {
-                    desc: "電子警笛",
-                    bind: "B"
-                },
-                Q: {
-                    desc: "前扉(降) あける",
-                    bind: "R"
-                },
-                W: {
-                    desc: "後扉(乗) あける",
-                    bind: "PLUS"
-                },
-                Numrow2: {
-                    desc: "後扉(乗) しめる",
-                    bind: "L"
-                },
-                Numrow1: {
-                    desc: "前扉(降) しめる",
-                    bind: "MINUS"
-                },
-                Space: {
-                    desc: "車内放送",
-                    bind: "Y"
-                },
-                Z: {
-                    bind: "KNOTCH_P_UP"
-                },
-                A: {
-                    bind: "KNOTCH_P_DOWN"
-                },
-                ",": {
-                    bind: "KNOTCH_B_DOWN"
-                },
-                ".": {
-                    bind: "KNOTCH_B_UP"
-                },
-                Up: {
-                    bind: "UP"
-                },
-                Down: {
-                    bind: "DOWN"
-                },
-                Left: {
-                    bind: "LEFT"
-                },
-                Right: {
-                    bind: "RIGHT"
-                },
-            },
-            discription: "TRAMCITY",
-            switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
-            onehandle: false,
-            twohandle: true,
-            mouse: false,
-            override: false
-        },
-        DENSHA_DE_GO_FINAL: {
-            name: "電車でGO! FINAL",
-            keylist: {
-                Escape: {
-                    desc: "ポーズ",
-                    bind: "HOME"
-                },
-                E: {
-                    desc: "左側アイテム",
-                    bind: "L"
-                },
-                R: {
-                    desc: "右側アイテム",
-                    bind: "R"
-                },
-                Space: {
-                    desc: "警笛",
-                    bind: "A"
-                },
-                Enter: {
-                    desc: "ATS確認 / 決定",
-                    bind: "ZR"
-                },
-                V: {
-                    desc: "視点切り替え",
-                    bind: "X"
-                },
-                Down: {
-                    bind: ["KNOTCH_P_UP", "DOWN"]
-                },
-                Up: {
-                    bind: ["KNOTCH_P_DOWN", "UP"]
-                },
-                Left: {
-                    bind: ["KNOTCH_B_DOWN" , "LEFT"]
-                },
-                Right: {
-                    bind: ["KNOTCH_B_UP" , "RIGHT"]
-                }
-            },
-            discription: "電車でGO! FINAL 2ハンドル",
-            onehandle: false,
-            twohandle: true,
-            mouse: false,
-            override: false,
-            switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
         }
+        // },
+        // TRAMCITY: {
+        //     name: "TRAMCITY",
+        //     keylist: {
+        //         Escape: {
+        //             desc: "ESCキー",
+        //             bind: "HOME"
+        //         },
+        //         Enter: {
+        //             desc: "警笛",
+        //             bind: "A"
+        //         },
+        //         RShift: {
+        //             desc: "電子警笛",
+        //             bind: "B"
+        //         },
+        //         Q: {
+        //             desc: "前扉(降) あける",
+        //             bind: "R"
+        //         },
+        //         W: {
+        //             desc: "後扉(乗) あける",
+        //             bind: "PLUS"
+        //         },
+        //         Numrow2: {
+        //             desc: "後扉(乗) しめる",
+        //             bind: "L"
+        //         },
+        //         Numrow1: {
+        //             desc: "前扉(降) しめる",
+        //             bind: "MINUS"
+        //         },
+        //         Space: {
+        //             desc: "車内放送",
+        //             bind: "Y"
+        //         },
+        //         Z: {
+        //             bind: "KNOTCH_P_UP"
+        //         },
+        //         A: {
+        //             bind: "KNOTCH_P_DOWN"
+        //         },
+        //         ",": {
+        //             bind: "KNOTCH_B_DOWN"
+        //         },
+        //         ".": {
+        //             bind: "KNOTCH_B_UP"
+        //         },
+        //         Up: {
+        //             bind: "UP"
+        //         },
+        //         Down: {
+        //             bind: "DOWN"
+        //         },
+        //         Left: {
+        //             bind: "LEFT"
+        //         },
+        //         Right: {
+        //             bind: "RIGHT"
+        //         },
+        //     },
+        //     discription: "TRAMCITY",
+        //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
+        //     onehandle: false,
+        //     twohandle: true,
+        //     mouse: false,
+        //     override: false
+        // },
+        // DENSHA_DE_GO_FINAL: {
+        //     name: "電車でGO! FINAL",
+        //     keylist: {
+        //         Escape: {
+        //             desc: "ポーズ",
+        //             bind: "HOME"
+        //         },
+        //         E: {
+        //             desc: "左側アイテム",
+        //             bind: "L"
+        //         },
+        //         R: {
+        //             desc: "右側アイテム",
+        //             bind: "R"
+        //         },
+        //         Space: {
+        //             desc: "警笛",
+        //             bind: "A"
+        //         },
+        //         Enter: {
+        //             desc: "ATS確認 / 決定",
+        //             bind: "ZR"
+        //         },
+        //         V: {
+        //             desc: "視点切り替え",
+        //             bind: "X"
+        //         },
+        //         Down: {
+        //             bind: ["KNOTCH_P_UP", "DOWN"]
+        //         },
+        //         Up: {
+        //             bind: ["KNOTCH_P_DOWN", "UP"]
+        //         },
+        //         Left: {
+        //             bind: ["KNOTCH_B_DOWN" , "LEFT"]
+        //         },
+        //         Right: {
+        //             bind: ["KNOTCH_B_UP" , "RIGHT"]
+        //         }
+        //     },
+        //     discription: "電車でGO! FINAL 2ハンドル",
+        //     onehandle: false,
+        //     twohandle: true,
+        //     mouse: false,
+        //     override: false,
+        //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
+        // },
+        // DENSHA_DE_GO_FINAL: {
+        //     name: "鉄道にっぽん！路線たび 叡山電車編",
+        //     keylist: {
+        //         Escape: {
+        //             desc: "戻る",
+        //             bind: "HOME"
+        //         },
+        //         Enter: {
+        //             desc: "決定",
+        //             bind: "A"
+        //         },
+        //         Space: {
+        //             desc: "運転席表示",
+        //             bind: "L"
+        //         },
+        //         W: {
+        //             desc: "警笛",
+        //             bind: "B"
+        //         },
+        //         E: {
+        //             desc: "電気笛",
+        //             bind: "Y"
+        //         },
+        //         Tab: {
+        //             desc: "一時停止",
+        //             bind: "MINUS"
+        //         },
+        //         Z: {
+        //             desc: "もう一度運転する",
+        //             bind: "X"
+        //         },
+        //         Up: {
+        //             bind: "UP",
+        //         },
+        //         Down: {
+        //             bind: "DOWN"
+        //         },
+        //         Left: {
+        //             bind: "LEFT"
+        //         },
+        //         Right: {
+        //             bind: "RIGHT"
+        //         },
+        //         D: {
+        //             bind: "KNOTCH_P_DOWN"
+        //         },
+        //         X: {
+        //             bind: "KNOTCH_P_UP"
+        //         },
+        //         J: {
+        //             bind: "KNOTCH_B_DOWN"
+        //         },
+        //         K: {
+        //             bind: "KNOTCH_B_UP"
+        //         },
+        //         S: {
+        //             bind: "KNOTCH_NEUTRAL_P"
+        //         },
+        //         H: {
+        //             bind: "KNOTCH_NEUTRAL_B"
+        //         },
+        //         L: {
+        //             bind: "KNOTCH_EMG_BRAKE"
+        //         }
+        //     },
+        //     discription: "鉄道にっぽん！路線たび 叡山電車編",
+        //     onehandle: false,
+        //     twohandle: true,
+        //     mouse: false,
+        //     override: false,
+        //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
+        // }
     },
     switchbuttonlist: ["未割り当て","A","B","X","Y","UP","DOWN","LEFT","RIGHT","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
     nowconfig: {}
