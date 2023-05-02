@@ -14,6 +14,8 @@
     let brakeLevel = 0;
     let Accel = 0;
     let Brake = 0;
+    let is_debug = ref(false);
+    let pressed_list = ref({name: "", buttons: [], axes: []});
 
     let connected = ref(false);
     function connecthandler(e) {
@@ -268,10 +270,32 @@
         }
         
         knotchLevel = controller.axes[1]
-        
-        selectKeys();
-    }
 
+        if (is_debug) {
+            pressed_list.value.name = controller.id;
+            pressed_list.value.buttons = [];
+            for (var i = 0; i < controller.buttons.length; i++) {
+                let val = controller.buttons[i];
+                let pressed = val == 1.0;
+                if (typeof(val) == "object") {
+                    pressed = val.pressed;
+                    val = val.value;
+                }
+                
+                if (pressed) {
+                    pressed_list.value.buttons.push(i);
+                    
+                }
+            }
+            pressed_list.value.axes = [];
+            for (i = 0; i < controller.axes.length; i++) {
+                pressed_list.value.axes.push(controller.axes[i]);
+            }
+        }
+        selectKeys();
+
+    }
+    
     function scangamepads() {
         let gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
         for (var i = 0; i < gamepads.length; i++) {
@@ -292,6 +316,23 @@
     <div class="ps-2 mb-2" v-if="connected"><div class="ms-2 row d-flex align-items-center"><span class="col col-2 badge bg-success ">マスコン接続中</span><span class="col col-5 ms-2 badge bg-warning text-dark">開始時は一度EBに入れてください</span></div></div>
     <div class="ps-2 mb-2" v-else><div class="ms-2 row d-flex align-items-center"><span class="col col-2 badge bg-danger ">マスコン未接続</span><span class="col col-7 ms-2 badge bg-warning text-dark">接続している場合はなにかボタンを押してください</span></div></div>
     <ConfigList />
+    <div class="mt-3">
+        <b-form-checkbox v-model="is_debug" switch>
+            デバッグモード
+        </b-form-checkbox>
+    </div>
+    <div class="mt-3 ms-4 row" v-if="is_debug">
+        <div class="col col-2">id:</div>
+        <div class="col">{{ pressed_list.name }}</div>
+        <div class="row" v-for='(axes, index) in pressed_list.axes'>
+            <div class="col col-2">axes{{index}}:</div>
+            <div class="col">{{ axes }}</div>
+        </div>
+        <div class="col col-2">buttons:</div>
+        <div class="col col-1" v-for='(button) in pressed_list.buttons'>
+            <div>{{ button }}</div>
+        </div>
+    </div>
 </template>
 
 

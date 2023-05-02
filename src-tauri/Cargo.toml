@@ -1,9 +1,9 @@
 [package]
 name = "zuiki-one-handle-mascon-converter"
-version = "1.0.0"
+version = "1.0.1"
 description = "ZUIKI 電GOコントローラー キーボード変換"
 authors = ["karasugawasu"]
-license = "(c) 2022 karasugawa Sue"
+license = "(c) 2023 karasugawa Sue"
 repository = ""
 edition = "2021"
 rust-version = "1.57"
