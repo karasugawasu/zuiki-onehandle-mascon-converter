@@ -84,6 +84,14 @@ export let keyconfig = {
                     desc: "TASC切スイッチ",
                     bind: ""
                 },
+                R: {
+                    desc: "直結方向",
+                    bind: ""
+                },
+                F: {
+                    desc: "変速方向",
+                    bind: ""
+                },
                 Z: {
                     bind: ["KNOTCH_P_UP", "KNOTCH_ACCEL"]
                 },
