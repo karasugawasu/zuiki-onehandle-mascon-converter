@@ -62,7 +62,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 920,
+        "height": 940,
         "resizable": true,
         "title": "ZUIKI 電GOコントローラー コンバーター",
         "width": 600

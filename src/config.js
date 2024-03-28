@@ -121,6 +121,7 @@ export let keyconfig = {
             switchbuttonlist: ["未割り当て","A","B","X","Y","UP","DOWN","LEFT","RIGHT","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
             onehandle: true,
             twohandle: false,
+            twohandleAab: false,
             mouse: false,
             override: true
         }
@@ -189,6 +190,7 @@ export let keyconfig = {
         //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
         //     onehandle: false,
         //     twohandle: true,
+        //     twohandleAab: false,
         //     mouse: false,
         //     override: false
         // },
@@ -235,6 +237,7 @@ export let keyconfig = {
         //     discription: "電車でGO! FINAL 2ハンドル",
         //     onehandle: false,
         //     twohandle: true,
+        //     twohandleAab: false,
         //     mouse: false,
         //     override: false,
         //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
@@ -307,6 +310,7 @@ export let keyconfig = {
         //     discription: "鉄道にっぽん！路線たび 叡山電車編",
         //     onehandle: false,
         //     twohandle: true,
+        //     twohandleAab: false,
         //     mouse: false,
         //     override: false,
         //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],

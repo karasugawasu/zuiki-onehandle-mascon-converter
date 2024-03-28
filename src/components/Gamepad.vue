@@ -134,7 +134,8 @@
                 [...Array(bfUpP + bfDownB)].forEach(() => {
                     putreleaseKey(nowconfig['KNOTCH_ACCEL']);
                 });
-            }else if (nowconfig.twohandle) {
+            }else if (nowconfig.twohandle || nowconfig.twohandleAab) {
+                if (nowconfig.twohandle) {
                 if (brakeLevel == 9 && Brake !== 9 && bfUpB > 0) {
                     if (nowconfig['KNOTCH_EMG_BRAKE']) {
                         putreleaseKey(nowconfig['KNOTCH_EMG_BRAKE']);
@@ -148,6 +149,7 @@
                     [...Array(bfUpB)].forEach(() => {
                         putreleaseKey(nowconfig['KNOTCH_B_UP']);
                     });
+                    };
                 }
 
                 if (accelLevel == 0 && Accel !== 0 && bfDownP > 0) {
@@ -165,6 +167,7 @@
                     });
                 }
 
+                if (nowconfig.twohandle) {
                 if (brakeLevel == 0 && Brake !== 0 && bfDownB > 0) {
                     if (nowconfig['KNOTCH_NEUTRAL_B']) {
                         putreleaseKey(nowconfig['KNOTCH_NEUTRAL_B']);
@@ -178,6 +181,19 @@
                     [...Array(bfDownB)].forEach(() => {
                         putreleaseKey(nowconfig['KNOTCH_B_DOWN']);
                     });
+                    };
+                }else{
+                    if (brakeLevel !== Brake) {
+                        let putKey = {
+                            3: nowconfig['KNOTCH_EMG_BRAKE'],
+                            2: nowconfig['KNOTCH_B_UP'],
+                            1: nowconfig['KNOTCH_B_DOWN'],
+                            0: nowconfig['KNOTCH_NEUTRAL_B']
+                        }[brakeLevel];
+                        if (putKey) {
+                            putreleaseKey(putKey);
+                        };
+                    };
                 }
 
                 //加速
