@@ -9,6 +9,7 @@
   let mouseMode = false;
   let onehandleMode = false;
   let twohandleMode = false;
+  let twohandleAabMode = false;
 
   const buttonSelected = ref([]);
 
@@ -71,11 +72,13 @@
     keyconfig.nowconfig["mouse"] = gameconfig.mouse;
     keyconfig.nowconfig["onehandle"] = gameconfig.onehandle;
     keyconfig.nowconfig["twohandle"] = gameconfig.twohandle;
+    keyconfig.nowconfig["twohandleAab"] = gameconfig.twohandleAab;
     keyconfig.nowconfig["override"] = gameconfig.override;
     options = gameconfig.switchbuttonlist;
     mouseMode = gameconfig.mouse;
     onehandleMode = gameconfig.onehandle;;
     twohandleMode = gameconfig.twohandle;
+    twohandleAabMode = gameconfig.twohandleAab;
   }
 
   loadConfig();
@@ -110,16 +113,25 @@
         keyconfig.gamelist[selectedGame].mouse = true;
         keyconfig.gamelist[selectedGame].onehandle = false;
         keyconfig.gamelist[selectedGame].twohandle = false;
+        keyconfig.gamelist[selectedGame].twohandleAab = false;
         break;
       case "onehandleMode":
         keyconfig.gamelist[selectedGame].mouse = false;
         keyconfig.gamelist[selectedGame].onehandle = true;
         keyconfig.gamelist[selectedGame].twohandle = false;
+        keyconfig.gamelist[selectedGame].twohandleAab = false;
         break;
       case "twohandleMode":
         keyconfig.gamelist[selectedGame].mouse = false;
         keyconfig.gamelist[selectedGame].onehandle = false;
         keyconfig.gamelist[selectedGame].twohandle = true;
+        keyconfig.gamelist[selectedGame].twohandleAab = false;
+        break;
+      case "twohandleAabMode":
+        keyconfig.gamelist[selectedGame].mouse = false;
+        keyconfig.gamelist[selectedGame].onehandle = false;
+        keyconfig.gamelist[selectedGame].twohandle = false;
+        keyconfig.gamelist[selectedGame].twohandleAab = true;
         break;
     }
     loadConfig();
@@ -136,7 +148,7 @@
           </div>
           <p class="pt-2 text-end fs-6">{{gameList[selectedGame].discription}}</p>
           <div v-if="keyconfig.nowconfig.override" class="row mb-2">
-            <div class="col col-5">
+            <div class="col">
               <b-form-checkbox class="me-2" v-model="mouseMode" :disabled="mouseMode" v-on:change="modeChange($event, 'mouseMode')" switch>
                 マウスモード
               </b-form-checkbox>
@@ -147,6 +159,12 @@
             <div class="col">
               <b-form-checkbox class="me-2" v-model="twohandleMode" :disabled="twohandleMode" v-on:change="modeChange($event, 'twohandleMode')" switch>
                 2ハンドル
+              </b-form-checkbox>
+            </div>
+            <div class="w-100"></div>
+            <div class="col offset-4">
+              <b-form-checkbox class="me-2" v-model="twohandleAabMode" :disabled="twohandleAabMode" v-on:change="modeChange($event, 'twohandleAabMode')" switch>
+                自動空気ブレーキ
               </b-form-checkbox>
             </div>
           </div>
