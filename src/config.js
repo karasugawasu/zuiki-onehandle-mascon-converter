@@ -46,19 +46,19 @@ export let keyconfig = {
                 },
                 Space: {
                     desc: "ATS確認ボタン",
-                    bind: "L"
+                    bind: ""
                 },
                 X: {
                     desc: "警報持続ボタン",
-                    bind: "R"
+                    bind: ""
                 },
                 Y: {
                      desc: "ATS復帰スイッチ（常用）",
-                     bind: "PLUS" 
+                     bind: "" 
                 },
                 U: {
                     desc: "ATS復帰スイッチ（非常）",
-                    bind: "MINUS"
+                    bind: ""
                 },
                 B: {
                     desc: "連絡ブザー",
@@ -66,11 +66,11 @@ export let keyconfig = {
                 },
                 I: {
                     desc: "インチングボタン",
-                    bind: ""
+                    bind: "PLUS"
                 },
                 W: {
                     desc: "定速/抑速（抑速2）スイッチ",
-                    bind: ""
+                    bind: "ZL"
                 },
                 D: {
                     desc: "抑速1スイッチ",
@@ -82,7 +82,15 @@ export let keyconfig = {
                 },
                 T: {
                     desc: "TASC切スイッチ",
-                    bind: ""
+                    bind: "R"
+                },
+                R: {
+                    desc: "直結方向",
+                    bind: "L"
+                },
+                F: {
+                    desc: "変速方向",
+                    bind: "MINUS"
                 },
                 Z: {
                     bind: ["KNOTCH_P_UP", "KNOTCH_ACCEL"]
@@ -111,9 +119,10 @@ export let keyconfig = {
             },
             discription: "JR East Train Simulator",
             switchbuttonlist: ["未割り当て","A","B","X","Y","UP","DOWN","LEFT","RIGHT","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
-            onehandle: true,
+            onehandle: false,
             twohandle: false,
-            mouse: false,
+            twohandleAab: false,
+            mouse: true,
             override: true
         }
         // },
@@ -181,6 +190,7 @@ export let keyconfig = {
         //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
         //     onehandle: false,
         //     twohandle: true,
+        //     twohandleAab: false,
         //     mouse: false,
         //     override: false
         // },
@@ -227,6 +237,7 @@ export let keyconfig = {
         //     discription: "電車でGO! FINAL 2ハンドル",
         //     onehandle: false,
         //     twohandle: true,
+        //     twohandleAab: false,
         //     mouse: false,
         //     override: false,
         //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
@@ -299,6 +310,7 @@ export let keyconfig = {
         //     discription: "鉄道にっぽん！路線たび 叡山電車編",
         //     onehandle: false,
         //     twohandle: true,
+        //     twohandleAab: false,
         //     mouse: false,
         //     override: false,
         //     switchbuttonlist: ["未割り当て","A","B","X","Y","L","R","ZL","ZR","HOME","CAPTURE","PLUS","MINUS"],
