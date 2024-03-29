@@ -1,6 +1,6 @@
 # zuiki-onehandle-mascon-converter
 
-![maingamen](https://user-images.githubusercontent.com/29486402/205307280-e828cc4a-e439-4c12-87cb-2d95702f0efa.JPG)
+![maingamen](appimage.png)
 
 ## コンセプト
 - マウス、キーボード操作両対応
