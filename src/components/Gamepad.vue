@@ -58,6 +58,8 @@
     }
 
     function selectKeys() {
+        let nowconfig = keyconfig.nowconfig;
+        let maxBrakeLevel = Number(nowconfig.maxBrakeLevel ?? 8);
         switch(true) {
             case knotchLevel == 1:
                 accelLevel = 5;
@@ -109,17 +111,23 @@
                 console.log('error knotch!!');
         }
     
+        if (brakeLevel > maxBrakeLevel && brakeLevel < 9) {
+            brakeLevel = Brake;
+        }
+
         let bfUpP = 0;
         let bfDownP = 0;
         let bfUpB = 0;
         let bfDownB = 0;
+        let ignoredBrakeSteps = Math.max(0, 8 - maxBrakeLevel);
 
         if (Accel < accelLevel) { bfUpP = accelLevel - Accel; }
         if (Accel > accelLevel) { bfDownP = Accel - accelLevel; }
         if (Brake > brakeLevel) { bfDownB = Brake - brakeLevel; }
         if (Brake < brakeLevel) { bfUpB = brakeLevel - Brake; }
-        
-        let nowconfig = keyconfig.nowconfig;
+        if (Brake === 9 && brakeLevel <= maxBrakeLevel) {
+            bfDownB = Math.max(0, bfDownB - ignoredBrakeSteps);
+        }
 
         if (!nowconfig.mouse) {
             if (nowconfig.onehandle) {

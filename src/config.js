@@ -123,7 +123,8 @@ export let keyconfig = {
             twohandle: false,
             twohandleAab: false,
             mouse: true,
-            override: true
+            override: true,
+            maxBrakeLevel: 8
         }
         // },
         // TRAMCITY: {

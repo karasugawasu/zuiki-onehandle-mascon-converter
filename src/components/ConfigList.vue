@@ -10,6 +10,11 @@
   let onehandleMode = false;
   let twohandleMode = false;
   let twohandleAabMode = false;
+  let maxBrakeLevel = 8;
+  const maxBrakeLevelOptions = Array.from({ length: 8 }, (_, i) => ({
+    value: i + 1,
+    text: `B${i + 1}`
+  }));
 
   const buttonSelected = ref([]);
 
@@ -74,11 +79,13 @@
     keyconfig.nowconfig["twohandle"] = gameconfig.twohandle;
     keyconfig.nowconfig["twohandleAab"] = gameconfig.twohandleAab;
     keyconfig.nowconfig["override"] = gameconfig.override;
+    keyconfig.nowconfig["maxBrakeLevel"] = gameconfig.maxBrakeLevel ?? 8;
     options = gameconfig.switchbuttonlist;
     mouseMode = gameconfig.mouse;
     onehandleMode = gameconfig.onehandle;;
     twohandleMode = gameconfig.twohandle;
     twohandleAabMode = gameconfig.twohandleAab;
+    maxBrakeLevel = keyconfig.nowconfig["maxBrakeLevel"];
   }
 
   loadConfig();
@@ -136,6 +143,11 @@
     }
     loadConfig();
   }
+
+  function changeMaxBrakeLevel(level) {
+    keyconfig.gamelist[selectedGame].maxBrakeLevel = Number(level);
+    loadConfig();
+  }
 </script>
 
 <template>
@@ -166,6 +178,16 @@
               <b-form-checkbox class="me-2" v-model="twohandleAabMode" :disabled="twohandleAabMode" v-on:change="modeChange($event, 'twohandleAabMode')" switch>
                 自動空気ブレーキ
               </b-form-checkbox>
+            </div>
+            <div class="w-100"></div>
+            <div class="col col-sm-4 mt-2">
+              <label class="form-label mb-1">最大常用ブレーキ段</label>
+              <b-form-select
+                size="sm"
+                v-model="maxBrakeLevel"
+                :options="maxBrakeLevelOptions"
+                v-on:change="changeMaxBrakeLevel($event)"
+              />
             </div>
           </div>
         </div>

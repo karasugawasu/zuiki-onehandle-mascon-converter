@@ -1,7 +1,7 @@
 {
   "name": "zuiki-one-handle-mascon-converter",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
-    "@tauri-apps/api": "^1.1.0",
+    "@tauri-apps/api": "^1.6.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
     "bootstrap-vue-3": "^0.4.10",
@@ -20,7 +20,7 @@
     "vuetify": "^3.0.1"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.1.0",
+    "@tauri-apps/cli": "^1.6.3",
     "@vitejs/plugin-vue": "^3.0.1",
     "vite": "^3.0.2"
   }
