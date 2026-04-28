@@ -124,6 +124,7 @@ export let keyconfig = {
             twohandleAab: false,
             mouse: true,
             override: true,
+            maxAccelLevel: 5,
             maxBrakeLevel: 8
         }
         // },

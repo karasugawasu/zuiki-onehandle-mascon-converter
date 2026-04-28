@@ -10,6 +10,11 @@
   let onehandleMode = false;
   let twohandleMode = false;
   let twohandleAabMode = false;
+  let maxAccelLevel = 5;
+  const maxAccelLevelOptions = Array.from({ length: 5 }, (_, i) => ({
+    value: i + 1,
+    text: `P${i + 1}`
+  }));
   let maxBrakeLevel = 8;
   const maxBrakeLevelOptions = Array.from({ length: 8 }, (_, i) => ({
     value: i + 1,
@@ -79,12 +84,14 @@
     keyconfig.nowconfig["twohandle"] = gameconfig.twohandle;
     keyconfig.nowconfig["twohandleAab"] = gameconfig.twohandleAab;
     keyconfig.nowconfig["override"] = gameconfig.override;
+    keyconfig.nowconfig["maxAccelLevel"] = gameconfig.maxAccelLevel ?? 5;
     keyconfig.nowconfig["maxBrakeLevel"] = gameconfig.maxBrakeLevel ?? 8;
     options = gameconfig.switchbuttonlist;
     mouseMode = gameconfig.mouse;
     onehandleMode = gameconfig.onehandle;;
     twohandleMode = gameconfig.twohandle;
     twohandleAabMode = gameconfig.twohandleAab;
+    maxAccelLevel = keyconfig.nowconfig["maxAccelLevel"];
     maxBrakeLevel = keyconfig.nowconfig["maxBrakeLevel"];
   }
 
@@ -144,6 +151,10 @@
     loadConfig();
   }
 
+  function changeMaxAccelLevel(level) {
+    keyconfig.gamelist[selectedGame].maxAccelLevel = Number(level);
+    loadConfig();
+  }
   function changeMaxBrakeLevel(level) {
     keyconfig.gamelist[selectedGame].maxBrakeLevel = Number(level);
     loadConfig();
@@ -180,6 +191,15 @@
               </b-form-checkbox>
             </div>
             <div class="w-100"></div>
+            <div class="col col-sm-4 mt-2">
+              <label class="form-label mb-1">最大力行段</label>
+              <b-form-select
+                size="sm"
+                v-model="maxAccelLevel"
+                :options="maxAccelLevelOptions"
+                v-on:change="changeMaxAccelLevel($event)"
+              />
+            </div>
             <div class="col col-sm-4 mt-2">
               <label class="form-label mb-1">最大常用ブレーキ段</label>
               <b-form-select
