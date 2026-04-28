@@ -1,6 +1,6 @@
 [package]
 name = "zuiki-one-handle-mascon-converter"
-version = "1.2.0"
+version = "1.2.1"
 description = "ZUIKI 電GOコントローラー キーボード変換"
 authors = ["karasugawasu"]
 license = "(c) 2023 karasugawa Sue"
